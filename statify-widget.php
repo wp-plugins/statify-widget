@@ -86,7 +86,7 @@ class StatifyWidget extends WP_Widget {
 			echo '<ol class="statify-widget">';
 			foreach($popular_content as $post) {
 				$visits = ($show_visits) ? " (" . $post['visits'] . ")" : '';
-				echo '<li><a href="' . $post['url'] . '">' . $post['title'] . $visits . '</a></li>';
+				echo '<li><a title="' . $post['title']. '" href="' . $post['url'] . '">' . $post['title'] . $visits . '</a></li>';
 			}
 			echo "</ol>";
 		}

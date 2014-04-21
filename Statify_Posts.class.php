@@ -8,9 +8,7 @@ class Statify_Posts {
 		$data = Statify_Dashboard::get_stats();
 		
 		foreach ($data['target'] as $entry) {
-			if ($counter > $amount) break;
-			
-			$clear_url = str_replace($wpurl['path']."/","",$entry['url']);
+			$clear_url = str_replace($wpurl['path'],"",$entry['url']);
 			$id = url_to_postid(home_url( $clear_url ));
 			
 			if ( $id == 0 ) {
@@ -34,6 +32,8 @@ class Statify_Posts {
 				$posts[$page->ID]['visits'] += $entry['count'];
 				$counter++;
 			}
+			
+			if ($counter >= $amount) break;
 		}
 		usort($posts, array("Statify_Posts", "visitSort"));
 		return $posts;
