@@ -78,8 +78,8 @@ Das &auml;ndert nichts. Das Plugin nimmt jeden Statify Eintrag und f&uuml;gt Sie
 == Changelog ==
 
 = 1.1 =
-* Begrenzung der Datensätze aufgehoben
-* title-Attribut zu den Links hinzugefügt
+* Begrenzung der Datens&auml;tze aufgehoben
+* title-Attribut zu den Links hinzugef&uuml;gt
 
 = 1.0 =
 * Ver&ouml;ffentlichung der ersten Version

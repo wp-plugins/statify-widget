@@ -5,7 +5,7 @@ Description: Widget für populäre Seiten, Artikel und andere Inhaltstypen auf d
 Author: Finn Dohrn
 Author URI: http://bit01.de
 Plugin URI: http://bit01.de/statify-widget
-Version: 1.0
+Version: 1.1
 */
 
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -83,12 +83,12 @@ class StatifyWidget extends WP_Widget {
 		if (empty( $popular_content )) {
 			echo "<p>Es gibt hier zu keine Einträge.</p>";
 		} else {
-			echo '<ol class="statify-widget">';
+			echo '<ol class="statify-widget">'."\n";
 			foreach($popular_content as $post) {
-				$visits = ($show_visits) ? " (" . $post['visits'] . ")" : '';
-				echo '<li><a title="' . $post['title']. '" href="' . $post['url'] . '">' . $post['title'] . $visits . '</a></li>';
+				$visits = ($show_visits) ? " (" . $post['visits'] . " Aufrufe)" : '';
+				echo '<li><a title="' . $post['title']. '" href="' . $post['url'] . '">' . $post['title'] . $visits . '</a></li>'."\n";
 			}
-			echo "</ol>";
+			echo "</ol>"."\n";
 		}
 	 
 		echo $after_widget;
