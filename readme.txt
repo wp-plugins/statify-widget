@@ -7,29 +7,29 @@ Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Widget um beliebte Inhalte für verschiedene Inhaltstypen anzeigen zu lassen.
+Widget um beliebte Inhalte f&uuml;r verschiedene Inhaltstypen anzeigen zu lassen.
 
 == Description ==
 
-Das *Statify Widget* zeigt die beliebtesten Inhalte anhand des [Statify](http://wordpress.org/plugins/statify/)-Plugin von Sergej Müller. Schnell und übersichtlich.
+Das *Statify Widget* zeigt die beliebtesten Inhalte anhand des [Statify](http://wordpress.org/plugins/statify/)-Plugin von Sergej M&uuml;ller. Schnell und &uuml;bersichtlich.
 
 = Statify =
 
-Plugin für Besucherstatistiken mit Schwerpunkten Datenschutz, Transparenz und Übersichtlichkeit.
+Plugin f&uuml;r Besucherstatistiken mit Schwerpunkten Datenschutz, Transparenz und &Uuml;bersichtlichkeit.
 
 **Hinweis**: Dieses Widget funktioniert nur in Verbindung mit dem Statify Plugin.
 
 = Eigene Inhaltstypen =
 
-Eigene Inhaltstypen (Custom Post Types) werden unterstüzt und können auch angezeigt werden.
+Eigene Inhaltstypen (Custom Post Types) werden unterst&uuml;zt und k&ouml;nnen auch angezeigt werden.
 
 = Intelligente Zusammenfassung =
 
-Sollte es einmal verschiedene Pfade zu einem Inhalt geben fügt das Widget sie zusammen und addiert die Aufrufe.
+Sollte es einmal verschiedene Pfade zu einem Inhalt geben f&uuml;gt das Widget sie zusammen und addiert die Aufrufe.
 
 = Einstellungen =
 
-Im Widget können folgene Einstellungen vorgenommen werden:
+Im Widget k&ouml;nnen folgene Einstellungen vorgenommen werden:
 
 * Titel
 * Inhaltstyp (Standard: Artikel)
@@ -47,27 +47,27 @@ Freundliche Fragen zum Widget beantworte ich gerne unter *Support*.
 
 == Installation ==
 
-Installiere zuvor das Plugin [Statify](http://wordpress.org/plugins/statify/) von Sergej Müller.
+Installiere zuvor das Plugin [Statify](http://wordpress.org/plugins/statify/) von Sergej M&uuml;ller.
 
 Dann:
 
-1. Lade den Ordner "statify-widget" in den Plugin-Ordner (./wp-content/plugins/)
+1. Lade den Ordner &quot;statify-widget&quot; in den Plugin-Ordner (./wp-content/plugins/)
 1. Aktiviere das Plugin auf deiner Seite
-1. Füge unter Design > Widgets das "Satify Widget" hinzu
+1. F&uuml;ge unter Design &gt; Widgets das &quot;Satify Widget&quot; hinzu
 
 == Frequently Asked Questions ==
 
-= Das Widget findet keine Einträge =
+= Das Widget findet keine Eintr&auml;ge =
 
-Dann hat Statify noch keine Einträge zur Statistik hinzugefügt.
+Dann hat Statify noch keine Eintr&auml;ge zur Statistik hinzugef&uuml;gt.
 
 = Ich habe keine statische Seite als Startseite =
 
-Kein Problem. Es wird ein Pseudo Eintrag "Startseite" angezeigt.
+Kein Problem. Es wird ein Pseudo Eintrag &quot;Startseite&quot; angezeigt.
 
-= Ich habe die Permalink-Struktur geändert =
+= Ich habe die Permalink-Struktur ge&auml;ndert =
 
-Das ändert nichts. Das Plugin nimmt jeden Statify Eintrag und fügt Sie sinnvoll zusammen.
+Das &auml;ndert nichts. Das Plugin nimmt jeden Statify Eintrag und f&uuml;gt Sie sinnvoll zusammen.
 
 == Screenshots ==
 
@@ -77,7 +77,7 @@ Das ändert nichts. Das Plugin nimmt jeden Statify Eintrag und fügt Sie sinnvoll 
 == Changelog ==
 
 = 1.0 =
-* Veröffentlichung der ersten Version
+* Ver&ouml;ffentlichung der ersten Version
 
 == Upgrade Notice ==
 
