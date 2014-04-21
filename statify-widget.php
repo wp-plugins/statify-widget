@@ -83,12 +83,12 @@ class StatifyWidget extends WP_Widget {
 		if (empty( $popular_content )) {
 			echo "<p>Es gibt hier zu keine Einträge.</p>";
 		} else {
-			echo '<ol class="statify-widget">';
+			echo '<ol class="statify-widget">'."\n";
 			foreach($popular_content as $post) {
 				$visits = ($show_visits) ? " (" . $post['visits'] . " Aufrufe)" : '';
-				echo '<li><a title="' . $post['title']. '" href="' . $post['url'] . '">' . $post['title'] . $visits . '</a></li>';
+				echo '<li><a title="' . $post['title']. '" href="' . $post['url'] . '">' . $post['title'] . $visits . '</a></li>'."\n";
 			}
-			echo "</ol>";
+			echo "</ol>"."\n";
 		}
 	 
 		echo $after_widget;
