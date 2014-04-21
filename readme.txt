@@ -3,7 +3,7 @@ Contributors: bitnulleins
 Tags: statify, widget, popular posts, custom post types, bit01, wordpress
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,10 @@ Das &auml;ndert nichts. Das Plugin nimmt jeden Statify Eintrag und f&uuml;gt Sie
 2. Statify Widget Einstellungen
 
 == Changelog ==
+
+= 1.1 =
+* Begrenzung der Datensätze aufgehoben
+* title-Attribut zu den Links hinzugefügt
 
 = 1.0 =
 * Ver&ouml;ffentlichung der ersten Version
