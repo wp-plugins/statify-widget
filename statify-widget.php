@@ -3,8 +3,8 @@
 Plugin Name: Statify Widget: Beliebte Inhalte
 Description: Widget für populäre Seiten, Artikel und andere Inhaltstypen auf der Grundlage des datenschutzkonformen Statistik Plugin Statify von Sergej Müller.
 Author: Finn Dohrn
-Author URI: http://bit01.de
-Plugin URI: http://bit01.de/statify-widget
+Author URI: http://www.bit01.de/
+Plugin URI: http://www.bit01.de/blogstatify-widget
 Version: 1.1
 */
 
