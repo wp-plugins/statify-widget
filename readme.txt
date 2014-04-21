@@ -42,6 +42,7 @@ Freundliche Fragen zum Widget beantworte ich gerne unter *Support*.
 
 = Autor =
 
+* [Webseite](http://www.bit01.de)
 * [Google+](https://plus.google.com/u/0/111297209657356291114)
 * [XING](http://www.xing.com/profile/Finn_Dohrn)
 
