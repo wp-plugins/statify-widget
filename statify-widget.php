@@ -5,7 +5,7 @@ Description: Widget für populäre Seiten, Artikel und andere Inhaltstypen auf d
 Author: Finn Dohrn
 Author URI: http://bit01.de
 Plugin URI: http://bit01.de/statify-widget
-Version: 1.0
+Version: 1.1
 */
 
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
