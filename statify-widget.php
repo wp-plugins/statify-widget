@@ -1,13 +1,12 @@
-﻿<?php
+<?php
 /*
 Plugin Name: Statify Widget: Beliebte Inhalte
 Description: Widget für populäre Seiten, Artikel und andere Inhaltstypen auf der Grundlage des datenschutzkonformen Statistik Plugin Statify von Sergej Müller.
 Author: Finn Dohrn
-Author URI: http://www.bit01.de
-Plugin URI: http://www.bit01.de/blog/statify-widget
+Author URI: http://www.bit01.de/
+Plugin URI: http://www.bit01.de/blog/statify-widget/
 Version: 1.1
 */
-
 require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 require_once( 'Statify_Posts.class.php' );
 
@@ -15,12 +14,10 @@ define('DEFAULT_AMOUNT', 5);
 define('DEFAULT_POST_TYPE','post');
 
 class StatifyWidget extends WP_Widget {
- 
 	function StatifyWidget() {
 		$widget_ops = array('classname' => 'statify-widget', 'description' => 'Zeigt beliebte Inhalte auf der Grundlage von Statify.' );
 		$this->WP_Widget('StatifyWidget', 'Statify Widget', $widget_ops);
 	}
-	 
 	function form($instance) {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'amount' => DEFAULT_AMOUNT, 'post_type' => DEFAULT_POST_TYPE, 'show_visits' => false ) );
     	$title = $instance['title'];
@@ -28,7 +25,6 @@ class StatifyWidget extends WP_Widget {
 		$post_type = $instance['post_type'];
 		$show_visits = $instance['show_visits'];
 ?>
-
         <p>
           <label for="<?php echo $this->get_field_id('title'); ?>">Titel:
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo attribute_escape($title); ?>" />
@@ -58,7 +54,6 @@ class StatifyWidget extends WP_Widget {
         </p>
 <?php
 	}
-	 
 	function update($new_instance, $old_instance) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
@@ -67,7 +62,6 @@ class StatifyWidget extends WP_Widget {
 		$instance['show_visits'] = ( ! empty( $new_instance['show_visits'] ) ) ? strip_tags( $new_instance['show_visits'] ) : 0;
 		return $instance;
 	}
-	 
 	function widget($args, $instance) {
 		extract($args, EXTR_SKIP);
 	 
@@ -94,14 +88,12 @@ class StatifyWidget extends WP_Widget {
 		echo $after_widget;
 	}
 }
-
 function showErrorMessages() {
 	$html = '<div class="error"><p>';
 	$html .= __( 'Bitte installieren und aktivieren Sie zuerst das <a target="_blank" href="http://wordpress.org/plugins/statify/">Statify</a> Plugin von Sergej M&uuml;ller.', 'error-statify-widget' );
 	$html .= '</p></div>';
 	echo $html;
 }
-
 function requires_statify_plugin() {
     $plugin_bcd_plugin = 'statify/statify.php';
     $plugin = plugin_basename( __FILE__ );
@@ -112,7 +104,6 @@ function requires_statify_plugin() {
 		add_action('admin_notices', 'showErrorMessages');  
     }
 }
-
 add_action( 'widgets_init', create_function('', 'return register_widget("StatifyWidget");') );
 add_action( 'admin_init', 'requires_statify_plugin' );
 ?>
