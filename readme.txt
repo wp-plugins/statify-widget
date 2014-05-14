@@ -77,6 +77,9 @@ Das &auml;ndert nichts. Das Plugin nimmt jeden Statify Eintrag und f&uuml;gt Sie
 
 == Changelog ==
 
+= 1.1.2 =
+* Korrekturen in der Validierung
+
 = 1.1.1 =
 * Benutzerdefinierter Text für die Anzahl der Aufrufe
 * Nicht benutztes require_once() entfernt
