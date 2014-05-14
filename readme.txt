@@ -77,6 +77,11 @@ Das &auml;ndert nichts. Das Plugin nimmt jeden Statify Eintrag und f&uuml;gt Sie
 
 == Changelog ==
 
+= 1.1.1 =
+* Benutzerdefinierter Text für die Anzahl der Aufrufe
+* Nicht benutztes require_once() entfernt
+* span-Element um die Anzahl der Aufrufe hinzugef&uuml;gt
+
 = 1.1 =
 * Begrenzung der Datens&auml;tze aufgehoben
 * title-Attribut zu den Links hinzugef&uuml;gt

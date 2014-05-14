@@ -5,13 +5,14 @@ Description: Widget für populäre Seiten, Artikel und andere Inhaltstypen auf d
 Author: Finn Dohrn
 Author URI: http://www.bit01.de/
 Plugin URI: http://www.bit01.de/blog/statify-widget/
-Version: 1.1
+Version: 1.1.1
 */
-require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-require_once( 'Statify_Posts.class.php' );
+
+require( 'Statify_Posts.class.php' );
 
 define('DEFAULT_AMOUNT', 5);
 define('DEFAULT_POST_TYPE','post');
+define('DEFAULT_SUFFIX', '(%ANZAHL% Aufrufe)');
 
 class StatifyWidget extends WP_Widget {
 	function StatifyWidget() {
@@ -19,11 +20,17 @@ class StatifyWidget extends WP_Widget {
 		$this->WP_Widget('StatifyWidget', 'Statify Widget', $widget_ops);
 	}
 	function form($instance) {
-		$instance = wp_parse_args( (array) $instance, array( 'title' => '', 'amount' => DEFAULT_AMOUNT, 'post_type' => DEFAULT_POST_TYPE, 'show_visits' => false ) );
+		$instance = wp_parse_args( (array) $instance, array(
+			'title' => '',
+			'amount' => DEFAULT_AMOUNT,
+			'post_type' => DEFAULT_POST_TYPE,
+			'show_visits' => false ,
+			'suffix' => DEFAULT_SUFFIX) );
     	$title = $instance['title'];
 		$amount = $instance['amount'];
 		$post_type = $instance['post_type'];
 		$show_visits = $instance['show_visits'];
+		$suffix = $instance['suffix'];
 ?>
         <p>
           <label for="<?php echo $this->get_field_id('title'); ?>">Titel:
@@ -46,11 +53,15 @@ class StatifyWidget extends WP_Widget {
           <label for="<?php echo $this->get_field_id('amount'); ?>">Anzahl:
             <input id="<?php echo $this->get_field_id('amount'); ?>" name="<?php echo $this->get_field_name('amount'); ?>" type="text" size="3" value="<?php echo attribute_escape($amount); ?>" />
           </label>
+          <label for="<?php echo $this->get_field_id('show_visits'); ?>"> 
+            <input class="checkbox widget-description" style="margin-left:15px;" type="checkbox" id="<?php echo $this->get_field_id('show_visits'); ?>" name="<?php echo $this->get_field_name('show_visits'); ?>" <?php checked($show_visits,'on'); ?>>
+            Aufrufe anzeigen?</label>
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('show_visits'); ?>">
-            <input class="checkbox" type="checkbox" id="<?php echo $this->get_field_id('show_visits'); ?>" name="<?php echo $this->get_field_name('show_visits'); ?>" <?php checked($show_visits,'on'); ?>>
-            Aufrufe anzeigen?</label>
+            <label for="<?php echo $this->get_field_id('suffix'); ?>">Benutzerdefinierter Text:
+            <input id="<?php echo $this->get_field_id('suffix'); ?>" class="widefat" name="<?php echo $this->get_field_name('suffix'); ?>" type="text" value="<?php echo attribute_escape($suffix); ?>" />
+            </label>
+            <small>%ANZAHL% = Anzahl der Aufrufe</small>
         </p>
 <?php
 	}
@@ -60,6 +71,7 @@ class StatifyWidget extends WP_Widget {
 		$instance['post_type'] = ( ! empty( $new_instance['post_type'] ) ) ? strip_tags( $new_instance['post_type'] ) : '';
 		$instance['amount'] = ( ! empty( $new_instance['amount'] ) ) ? strip_tags( $new_instance['amount'] ) : '';
 		$instance['show_visits'] = ( ! empty( $new_instance['show_visits'] ) ) ? strip_tags( $new_instance['show_visits'] ) : 0;
+		$instance['suffix'] = ( ! empty( $new_instance['suffix'] ) ) ? strip_tags( $new_instance['suffix'] ) : '';
 		return $instance;
 	}
 	function widget($args, $instance) {
@@ -70,17 +82,18 @@ class StatifyWidget extends WP_Widget {
 		$amount = empty($instance['amount']) ? DEFAULT_AMOUNT : $instance['amount'];
 		$post_type = empty($instance['post_type']) ? DEFAULT_POST_TYPE : $instance['post_type'];
 		$show_visits = ($instance['show_visits']) ? 1 : 0;
+		$suffix = empty($instance['suffix']) ? DEFAULT_SUFFIX : $instance['suffix'];
 
 		if (!empty($title)) echo $before_title . $title . $after_title;
 
 		$popular_content = Statify_Posts::get_posts($post_type, $amount);
 		if (empty( $popular_content )) {
-			echo "<p>Es gibt hier zu keine Einträge.</p>";
+			echo "<p>Es gibt noch keine Einträge.</p>";
 		} else {
 			echo '<ol class="statify-widget">'."\n";
 			foreach($popular_content as $post) {
-				$visits = ($show_visits) ? " (" . $post['visits'] . " Aufrufe)" : '';
-				echo '<li><a title="' . $post['title']. '" href="' . $post['url'] . '">' . $post['title'] . $visits . '</a></li>'."\n";
+				$_suffix = ($show_visits) ? ' <span>' . str_replace("%ANZAHL%", $post['visits'], $suffix) . '</span>' : '';
+				echo '<li><a title="' . $post['title']. '" href="' . $post['url'] . '">' . $post['title'] . '</a>'. $_suffix .'</li>'."\n";
 			}
 			echo "</ol>"."\n";
 		}
