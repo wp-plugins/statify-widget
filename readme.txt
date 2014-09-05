@@ -7,7 +7,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Widget um beliebte Inhalte, f&uuml;r verschiedene Inhaltstypen, anzeigen zu lassen. Basiert auf der Statistik von Statify.
+Widget um beliebte Inhalte (Seiten, Artikel...) anzeigen zu lassen. Basiert auf der Statistik von Statify.
 
 == Description ==
 
