@@ -2,12 +2,12 @@
 Contributors: bitnulleins
 Tags: statify, widget, popular posts, custom post types, bit01, wordpress
 Requires at least: 3.8
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Widget um beliebte Inhalte f&uuml;r verschiedene Inhaltstypen anzeigen zu lassen.
+Widget um beliebte Inhalte, f&uuml;r verschiedene Inhaltstypen, anzeigen zu lassen. Basiert auf der Statistik von Statify.
 
 == Description ==
 
